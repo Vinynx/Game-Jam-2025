@@ -302,6 +302,16 @@ tile_set = SubResource("TileSet_s27ol")
 format = 2
 layer_0/tile_data = PackedInt32Array(327693, 393216, 2)
 
+[node name="FridgeBody" type="StaticBody2D" parent="."]
+script = ExtResource("4_prfup")
+
+[node name="Interactable" parent="FridgeBody" instance=ExtResource("5_yeu3c")]
+interact_name = "Z or Enter to open freezer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FridgeBody/Interactable"]
+position = Vector2(650.5, 271.5)
+shape = SubResource("RectangleShape2D_w8l4g")
+
 [node name="TileMapOverhead" type="TileMap" parent="."]
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_g5ab4")
@@ -325,6 +335,16 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_r7fnb")
 format = 2
 layer_0/tile_data = PackedInt32Array(393234, 393216, 1)
+
+[node name="OvenBody" type="StaticBody2D" parent="."]
+script = ExtResource("4_t2bep")
+
+[node name="Interactable" parent="OvenBody" instance=ExtResource("5_yeu3c")]
+interact_name = "Z or Enter to cook"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenBody/Interactable"]
+position = Vector2(888.5, 308)
+shape = SubResource("RectangleShape2D_h2pt8")
 
 [node name="TileMapSink" type="TileMap" parent="."]
 position = Vector2(0, 40.5)
