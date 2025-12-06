@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://djog4uje8jkg4" path="res://Who let us in the kitchen/df9e8x8-05ec57d8-7e38-4c50-8cb4-0bb53e1f9f23.png" id="2_n8f8d"]
 [ext_resource type="Texture2D" uid="uid://dnljssggrp0gc" path="res://assets/Wooden Planks/sprite_00.png" id="2_pd3mh"]
 [ext_resource type="Texture2D" uid="uid://x4dftj68x4mp" path="res://assets/pixelinterior_LRK/kitchen_LRK.png" id="3_rdxmd"]
+[ext_resource type="Script" path="res://fridge_body.gd" id="4_qgvk6"]
+[ext_resource type="PackedScene" uid="uid://de0qsjhsf5fwi" path="res://interactable.tscn" id="5_yeu3c"]
+[ext_resource type="PackedScene" uid="uid://c1cwgd8nx57ne" path="res://interacting_component.tscn" id="6_h115d"]
+[ext_resource type="Script" path="res://oven_body.gd" id="6_j01mq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neeaf"]
 texture = ExtResource("1_0vamq")
@@ -302,6 +306,16 @@ tile_set = SubResource("TileSet_s27ol")
 format = 2
 layer_0/tile_data = PackedInt32Array(327693, 393216, 2)
 
+[node name="FridgeBody" type="StaticBody2D" parent="."]
+script = ExtResource("4_qgvk6")
+
+[node name="Interactable" parent="FridgeBody" instance=ExtResource("5_yeu3c")]
+interact_name = "Z or Enter to open freezer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FridgeBody/Interactable"]
+position = Vector2(650.5, 271.5)
+shape = SubResource("RectangleShape2D_w8l4g")
+
 [node name="TileMapOverhead" type="TileMap" parent="."]
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_g5ab4")
@@ -325,6 +339,16 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_r7fnb")
 format = 2
 layer_0/tile_data = PackedInt32Array(393234, 393216, 1)
+
+[node name="OvenBody" type="StaticBody2D" parent="."]
+script = ExtResource("6_j01mq")
+
+[node name="Interactable" parent="OvenBody" instance=ExtResource("5_yeu3c")]
+interact_name = "Z or Enter to cook"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OvenBody/Interactable"]
+position = Vector2(888.5, 308)
+shape = SubResource("RectangleShape2D_h2pt8")
 
 [node name="TileMapSink" type="TileMap" parent="."]
 position = Vector2(0, 40.5)
