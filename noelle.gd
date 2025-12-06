@@ -28,3 +28,5 @@ func _physics_process(delta: float) -> void:
 		#animated_sprite.play("")
 
 	move_and_slide()
+	
+	#test 3
