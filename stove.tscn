@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dle65v0cm4xgt"]
+
+[ext_resource type="Texture2D" uid="uid://cxayncduxp5im" path="res://assets/stovetop.png" id="1_66cvj"]
+[ext_resource type="Script" path="res://stove.gd" id="1_axgy6"]
+[ext_resource type="Texture2D" uid="uid://ckqbt4sttbof1" path="res://assets/pan.png" id="2_dgowj"]
+
+[node name="Stove" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axgy6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_66cvj")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_dgowj")
