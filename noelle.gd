@@ -5,44 +5,38 @@ const SPEED = 300.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-var facingDirection := "forward"
+func get_input():
+    var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+    velocity = input_direction * SPEED
 
-func _physics_process(delta: float) -> void:
-	var facingDirection := "forward"
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var xDirection := Input.get_axis("ui_left", "ui_right")
-	var yDirection := Input.get_axis("ui_down", "ui_up")
-	if xDirection:
-		facingDirection = "right"
-		velocity.x = xDirection * SPEED
-	else:
-		facingDirection = "left"
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if yDirection:
-		facingDirection = "backward"
-		velocity.y = yDirection * SPEED
-	else:
-		facingDirection = "forward"
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
-	if xDirection == 0 && yDirection == 0:
-		if facingDirection == "forward":
-			animated_sprite.play("forward_idle")
-		if facingDirection == "backward":
-			animated_sprite.play("backward_idle")
-		if facingDirection == "left":
-			animated_sprite.play("left_idle")
-		if facingDirection == "right":
-			animated_sprite.play("right_idle")
-	else:
-		if facingDirection == "forward":
-			animated_sprite.play("forward_walk")
-		if facingDirection == "backward":
-			animated_sprite.play("backward_walk")
-		if facingDirection == "left":
-			animated_sprite.play("left_walk")
-		if facingDirection == "right":
-			animated_sprite.play("right_walk")
+func _physics_process(delta):
+    get_input()
+    var move = false
 
-	move_and_slide()
+    if Input.is_action_just_released("ui_down"):
+        animated_sprite.play("forward_idle")
+        move = false
+    if Input.is_action_just_released("ui_up"):
+        animated_sprite.play("backward_idle")
+        move = false
+    if Input.is_action_just_released("ui_left"):
+        animated_sprite.play("left_idle")
+        move = false
+    if Input.is_action_just_released("ui_right"):
+        animated_sprite.play("right_idle")
+        move = false
+
+    if Input.is_action_pressed("ui_down") && move == false:
+        animated_sprite.play("forward_walk")
+        move = true
+    if Input.is_action_pressed("ui_up") && move == false:
+        animated_sprite.play("backward_walk")
+        move = true
+    if Input.is_action_pressed("ui_left") && move == false:
+        animated_sprite.play("left_walk")
+        move = true
+    if Input.is_action_pressed("ui_right") && move == false:
+        animated_sprite.play("right_walk")
+        move = true
+
+    move_and_slide()
