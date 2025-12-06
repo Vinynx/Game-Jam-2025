@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dle65v0cm4xgt"]
+[gd_scene load_steps=4 format=3 uid="uid://cgeekthxc4bqu"]
 
 [ext_resource type="Texture2D" uid="uid://cxayncduxp5im" path="res://assets/stovetop.png" id="1_66cvj"]
 [ext_resource type="Script" path="res://stove.gd" id="1_axgy6"]
@@ -27,3 +27,5 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_dgowj")
+
+[node name="Timer" type="Timer" parent="."]

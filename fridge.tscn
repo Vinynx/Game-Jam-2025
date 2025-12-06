@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct4mirf50lv4c"]
+[gd_scene load_steps=4 format=3 uid="uid://b24ri84rp8w52"]
 
 [ext_resource type="Script" path="res://fridge.gd" id="1_ia5mj"]
 [ext_resource type="Texture2D" uid="uid://bwbyuncq2ot3l" path="res://assets/drawer.png" id="1_k16j3"]
