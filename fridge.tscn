@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct4mirf50lv4c"]
+
+[ext_resource type="Script" path="res://fridge.gd" id="1_ia5mj"]
+[ext_resource type="Texture2D" uid="uid://bwbyuncq2ot3l" path="res://assets/drawer.png" id="1_k16j3"]
+[ext_resource type="Texture2D" uid="uid://cc4xbxjqucbgo" path="res://assets/burgers.png" id="2_1hbff"]
+
+[node name="Fridge" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ia5mj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k16j3")
+
+[node name="Burgers" type="TextureButton" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 258.0
+offset_top = 354.0
+offset_right = 453.0
+offset_bottom = 557.0
+texture_normal = ExtResource("2_1hbff")
