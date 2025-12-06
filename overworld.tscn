@@ -158,7 +158,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wao61"]
+texture = ExtResource("2_pd3mh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b4m6m"]
+sources/1 = SubResource("TileSetAtlasSource_wao61")
+
+[node name="Kitchen" type="Node2D"]
 
 [node name="Noelle" type="CharacterBody2D" parent="."]
 position = Vector2(547, 298)
