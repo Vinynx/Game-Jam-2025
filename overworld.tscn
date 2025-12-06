@@ -1,14 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://b28wj8o4s32tg"]
+[gd_scene load_steps=48 format=3 uid="uid://b28wj8o4s32tg"]
 
 [ext_resource type="Texture2D" uid="uid://ciyk57rj7kwac" path="res://assets/pixelinterior_LRK/floorswalls_LRK.png" id="1_0vamq"]
 [ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
 [ext_resource type="Texture2D" uid="uid://djog4uje8jkg4" path="res://Who let us in the kitchen/df9e8x8-05ec57d8-7e38-4c50-8cb4-0bb53e1f9f23.png" id="2_n8f8d"]
 [ext_resource type="Texture2D" uid="uid://dnljssggrp0gc" path="res://assets/Wooden Planks/sprite_00.png" id="2_pd3mh"]
 [ext_resource type="Texture2D" uid="uid://x4dftj68x4mp" path="res://assets/pixelinterior_LRK/kitchen_LRK.png" id="3_rdxmd"]
-[ext_resource type="Script" path="res://fridge.gd" id="4_prfup"]
-[ext_resource type="Script" path="res://oven.gd" id="4_t2bep"]
-[ext_resource type="PackedScene" uid="uid://de0qsjhsf5fwi" path="res://interactable.tscn" id="5_yeu3c"]
-[ext_resource type="PackedScene" uid="uid://c1cwgd8nx57ne" path="res://interacting_component.tscn" id="6_h115d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neeaf"]
 texture = ExtResource("1_0vamq")
@@ -57,9 +53,6 @@ texture_region_size = Vector2i(51, 61)
 [sub_resource type="TileSet" id="TileSet_s27ol"]
 sources/0 = SubResource("TileSetAtlasSource_gx05o")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8l4g"]
-size = Vector2(97, 177)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybnoe"]
 texture = ExtResource("3_rdxmd")
 margins = Vector2i(192, 9)
@@ -96,9 +89,6 @@ texture_region_size = Vector2i(32, 42)
 
 [sub_resource type="TileSet" id="TileSet_r7fnb"]
 sources/0 = SubResource("TileSetAtlasSource_4h0x1")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2pt8"]
-size = Vector2(89, 116)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2i1gk"]
 texture = ExtResource("3_rdxmd")
@@ -312,16 +302,6 @@ tile_set = SubResource("TileSet_s27ol")
 format = 2
 layer_0/tile_data = PackedInt32Array(327693, 393216, 2)
 
-[node name="Fridge" type="StaticBody2D" parent="."]
-script = ExtResource("4_prfup")
-
-[node name="Interactable" parent="Fridge" instance=ExtResource("5_yeu3c")]
-interact_name = "Z or Enter to open freezer"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/Interactable"]
-position = Vector2(650.5, 271.5)
-shape = SubResource("RectangleShape2D_w8l4g")
-
 [node name="TileMapOverhead" type="TileMap" parent="."]
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_g5ab4")
@@ -346,16 +326,6 @@ tile_set = SubResource("TileSet_r7fnb")
 format = 2
 layer_0/tile_data = PackedInt32Array(393234, 393216, 1)
 
-[node name="Oven" type="StaticBody2D" parent="."]
-script = ExtResource("4_t2bep")
-
-[node name="Interactable" parent="Oven" instance=ExtResource("5_yeu3c")]
-interact_name = "Z or Enter to cook"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Oven/Interactable"]
-position = Vector2(888.5, 308)
-shape = SubResource("RectangleShape2D_h2pt8")
-
 [node name="TileMapSink" type="TileMap" parent="."]
 position = Vector2(0, 40.5)
 scale = Vector2(3, 3)
@@ -376,8 +346,6 @@ animation = &"right_idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Noelle"]
 position = Vector2(0, 34.25)
 shape = SubResource("RectangleShape2D_0q1ji")
-
-[node name="InteractingComponent" parent="Noelle" instance=ExtResource("6_h115d")]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
