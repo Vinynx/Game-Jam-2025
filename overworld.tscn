@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b28wj8o4s32tg"]
+
+[ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Noelle" type="CharacterBody2D" parent="."]
+position = Vector2(547, 298)
+motion_mode = 1
+script = ExtResource("1_shmvu")
