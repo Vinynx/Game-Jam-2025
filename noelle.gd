@@ -8,7 +8,6 @@ const SPEED = 300.0
 var facingDirection := "forward"
 
 func _physics_process(delta: float) -> void:
-	var facingDirection := "forward"
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var xDirection := Input.get_axis("ui_left", "ui_right")
@@ -16,13 +15,13 @@ func _physics_process(delta: float) -> void:
 	if xDirection:
 		facingDirection = "right"
 		velocity.x = xDirection * SPEED
-	else:
+	if not xDirection:
 		facingDirection = "left"
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if yDirection:
 		facingDirection = "backward"
 		velocity.y = yDirection * SPEED
-	else:
+	if not yDirection:
 		facingDirection = "forward"
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
