@@ -10,5 +10,10 @@ func _ready() -> void:
 
 func _on_interact():
 	Global.last_world_position = %Noelle.position
-	Global.check = true
+	if Global.state:
+		Global.check = true
+		%FireMagic2.play("fire")
+
+
+func _on_fire_magic_2_animation_finished() -> void:
 	get_tree().change_scene_to_file('res://stove.tscn')

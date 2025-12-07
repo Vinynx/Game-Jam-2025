@@ -10,5 +10,6 @@ func _ready() -> void:
 
 func _on_interact():
 	Global.last_world_position = %Noelle.position
-	Global.check = true
-	get_tree().change_scene_to_file('res://fridge.tscn')
+	if Global.state:
+		Global.check = true
+		get_tree().change_scene_to_file('res://fridge.tscn')

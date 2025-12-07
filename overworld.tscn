@@ -182,6 +182,62 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjbqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xpsux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_inelw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0on2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_oc6so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ffyba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_w26qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dvikx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_b1anf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_g68p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8acob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_oulle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_aj0pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ib7dp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_t1s3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_br1tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8v45e")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_j6h4h"]
 atlas = ExtResource("2_n8f8d")
 region = Rect2(100, 300, 100, 100)
@@ -372,62 +428,6 @@ size = Vector2(892, 126)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gk8y"]
 size = Vector2(384, 124)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bjbqf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_xpsux")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_inelw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_0on2x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_oc6so")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_ffyba")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_w26qp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_dvikx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_b1anf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_g68p0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_8acob")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_oulle")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_aj0pr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_ib7dp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_t1s3l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_br1tb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_8v45e")
-}],
-"loop": false,
-"name": &"fire",
-"speed": 10.0
-}]
-
 [node name="Kitchen" type="Node2D"]
 
 [node name="TileMapWall" type="TileMap" parent="."]
@@ -540,6 +540,15 @@ scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_w2qip")
 animation = &"open"
 
+[node name="FireMagic2" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(888, 271)
+scale = Vector2(7.18164, 6.94727)
+sprite_frames = SubResource("SpriteFrames_bjbqf")
+animation = &"fire"
+frame = 15
+frame_progress = 1.0
+
 [node name="Noelle" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(100, 533)
@@ -626,4 +635,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("38_bl3mp")
 
+[connection signal="animation_finished" from="FireMagic2" to="OvenBody" method="_on_fire_magic_2_animation_finished"]
 [connection signal="animation_finished" from="Noelle/AnimatedSprite2D" to="LetterBody" method="_on_animation_finished"]

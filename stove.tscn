@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgeekthxc4bqu"]
+[gd_scene load_steps=9 format=3 uid="uid://cgeekthxc4bqu"]
 
 [ext_resource type="Texture2D" uid="uid://cxayncduxp5im" path="res://assets/stovetop.png" id="1_66cvj"]
 [ext_resource type="Script" path="res://stove.gd" id="1_axgy6"]
 [ext_resource type="Texture2D" uid="uid://ckqbt4sttbof1" path="res://assets/pan.png" id="2_dgowj"]
+[ext_resource type="Texture2D" uid="uid://co2s54l2cfwrk" path="res://assets/off.png" id="4_kjeeg"]
+[ext_resource type="Texture2D" uid="uid://8mroti4qxxhd" path="res://assets/burger 1.png" id="4_v5x5y"]
+[ext_resource type="Texture2D" uid="uid://cucswuhi10qcj" path="res://assets/on.png" id="5_0hr4w"]
+[ext_resource type="Texture2D" uid="uid://cko3qshwa1yde" path="res://assets/burger 2.png" id="5_v23fu"]
+[ext_resource type="Texture2D" uid="uid://db5db3ewbahp6" path="res://assets/burger 3.png" id="6_ewrxt"]
 
 [node name="Stove" type="Control"]
 layout_mode = 3
@@ -47,15 +52,151 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 60
 text = "START"
 
-[node name="Indicator" type="ColorRect" parent="."]
+[node name="Off" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 195.0
+offset_bottom = 182.0
+texture = ExtResource("4_kjeeg")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Indicator" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 195.0
+offset_bottom = 182.0
+texture = ExtResource("5_0hr4w")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Raw1" type="TextureRect" parent="."]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -67.0
-offset_right = 67.0
-offset_bottom = 127.0
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.344
+anchor_right = 0.619
+anchor_bottom = 0.656
+offset_left = -11.912
+offset_top = -37.135
+offset_right = 171.912
+offset_bottom = 48.689
 grow_horizontal = 2
-color = Color(0.905269, 3.34509e-06, 1.15514e-06, 1)
+grow_vertical = 2
+rotation = -0.525559
+texture = ExtResource("4_v5x5y")
+
+[node name="Raw2" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.344
+anchor_right = 0.619
+anchor_bottom = 0.656
+offset_left = 184.088
+offset_top = -225.135
+offset_right = 367.912
+offset_bottom = -139.311
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.467525
+texture = ExtResource("4_v5x5y")
+
+[node name="Cooking1" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.344
+anchor_right = 0.619
+anchor_bottom = 0.656
+offset_left = 30.088
+offset_top = -44.135
+offset_right = 119.912
+offset_bottom = 12.689
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.525559
+texture = ExtResource("5_v23fu")
+
+[node name="Cooking2" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.344
+anchor_right = 0.619
+anchor_bottom = 0.656
+offset_left = 206.088
+offset_top = -194.135
+offset_right = 295.912
+offset_bottom = -137.311
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.434755
+texture = ExtResource("5_v23fu")
+
+[node name="Cooked1" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.344
+anchor_right = 0.619
+anchor_bottom = 0.656
+offset_left = 19.088
+offset_top = -50.135
+offset_right = 120.912
+offset_bottom = 17.689
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.525559
+texture = ExtResource("6_ewrxt")
+
+[node name="Cooked2" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.381
+anchor_top = 0.344
+anchor_right = 0.619
+anchor_bottom = 0.656
+offset_left = 211.088
+offset_top = -210.135
+offset_right = 312.912
+offset_bottom = -142.311
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.457301
+texture = ExtResource("6_ewrxt")
+
+[node name="Success" type="TextEdit" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.5
+offset_top = -103.5
+offset_right = 243.5
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 63
+text = "      SUCCESS!
+ X or Esc to Exit
+"
