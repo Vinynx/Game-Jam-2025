@@ -181,6 +181,14 @@ animations = [{
 "loop": true,
 "name": &"opened",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ygc81")
+}],
+"loop": true,
+"name": &"shut",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bjbqf"]
@@ -536,10 +544,11 @@ position = Vector2(1101.5, 537.5)
 shape = SubResource("RectangleShape2D_do8ue")
 
 [node name="Letter" type="AnimatedSprite2D" parent="LetterBody"]
+unique_name_in_owner = true
 position = Vector2(1127, 536)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_w2qip")
-animation = &"open"
+animation = &"shut"
 
 [node name="FireMagic2" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -603,6 +612,7 @@ texture = ExtResource("15_h3v8s")
 
 [node name="MysteryLetter" type="Sprite2D" parent="StaticBody2D"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(572, 445)
 scale = Vector2(0.31325, 0.296661)
 texture = ExtResource("37_hwo5g")

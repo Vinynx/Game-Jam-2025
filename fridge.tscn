@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b24ri84rp8w52"]
+[gd_scene load_steps=5 format=3 uid="uid://b24ri84rp8w52"]
 
 [ext_resource type="Script" path="res://fridge.gd" id="1_ia5mj"]
 [ext_resource type="Texture2D" uid="uid://bwbyuncq2ot3l" path="res://assets/drawer.png" id="1_k16j3"]
 [ext_resource type="Texture2D" uid="uid://cc4xbxjqucbgo" path="res://assets/burgers.png" id="2_1hbff"]
+[ext_resource type="Texture2D" uid="uid://dhq7prsy0mc1e" path="res://assets/berdly freezer.png" id="4_n7h3s"]
 
 [node name="Fridge" type="Control"]
 layout_mode = 3
@@ -30,3 +31,14 @@ offset_top = 354.0
 offset_right = 453.0
 offset_bottom = 557.0
 texture_normal = ExtResource("2_1hbff")
+
+[node name="BerdlyFreezer" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_n7h3s")

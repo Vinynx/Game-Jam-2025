@@ -11,3 +11,8 @@ func _on_interact():
 		print("ding!")
 		Global.bell = true
 		Global.reset = true
+		Global.success = false
+		Global.burgers = false
+		Global.letter = false
+		Global.state = false
+		%Letter.play("shut")
