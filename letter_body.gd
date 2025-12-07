@@ -4,9 +4,9 @@ extends StaticBody2D
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_cancel") || Input.is_action_pressed("ui_x"):
-		get_tree().paused = false
 		%TorielLetter.hide()
-		if Global.state == false:
+		if Global.state == false && get_tree().paused == true:
+			get_tree().paused = false
 			%FireMagic.play("fire")
 			%Noelle.animated_sprite.play("shock")
 			%Noelle.position += Vector2(-120, 0)

@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://caqhu6xtin6y5"]
+[gd_scene load_steps=9 format=3 uid="uid://caqhu6xtin6y5"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_j2chb"]
 [ext_resource type="Texture2D" uid="uid://c5l2dbaf3mrnl" path="res://assets/menu.png" id="1_k0l6v"]
-[ext_resource type="Texture2D" uid="uid://csjhgsj345uma" path="res://assets/mouse.png" id="4_i7ejk"]
-
-[sub_resource type="Theme" id="Theme_vhu6p"]
+[ext_resource type="Texture2D" uid="uid://cid2cikdb0wgl" path="res://assets/play.png" id="3_hn1ie"]
+[ext_resource type="Texture2D" uid="uid://dtejj4nybs04s" path="res://assets/play hover.png" id="4_deq2t"]
+[ext_resource type="Texture2D" uid="uid://dpimihue7sv8y" path="res://assets/credits.png" id="4_sqnge"]
+[ext_resource type="Texture2D" uid="uid://bd1vhewl8oylf" path="res://assets/quit.png" id="5_7yrxm"]
+[ext_resource type="Texture2D" uid="uid://dqyp07kpcxqbn" path="res://assets/credits hover.png" id="6_3q5g7"]
+[ext_resource type="Texture2D" uid="uid://cfdl7yskw1mhi" path="res://assets/quit hover.png" id="8_30aup"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -26,45 +29,57 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_k0l6v")
 expand_mode = 1
+stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
-layout_mode = 2
-offset_left = 328.0
-offset_top = 317.0
-offset_right = 680.0
-offset_bottom = 480.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_vhu6p")
-theme_override_constants/separation = 21
-
-[node name="Play" type="Button" parent="TextureRect/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="TextureRect"]
 unique_name_in_owner = true
-layout_mode = 2
-text = "Play"
-
-[node name="Credits" type="Button" parent="TextureRect/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Credits"
-
-[node name="Quit" type="Button" parent="TextureRect/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Quit"
-
-[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -287.0
-offset_top = -173.0
-offset_right = -6.0
-offset_bottom = -36.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("4_i7ejk")
-expand_mode = 1
+anchors_preset = -1
+anchor_left = 0.374327
+anchor_top = 0.454924
+anchor_right = 0.513327
+anchor_bottom = 0.559483
+offset_left = 0.40094
+offset_right = 250.134
+offset_bottom = 98.6129
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.389172, 0.433217)
+texture_normal = ExtResource("3_hn1ie")
+texture_hover = ExtResource("4_deq2t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits" type="TextureButton" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.343
+anchor_top = 0.558946
+anchor_right = 0.557
+anchor_bottom = 0.65787
+offset_left = -0.479034
+offset_right = 406.779
+offset_bottom = 102.676
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.378596, 0.409244)
+texture_normal = ExtResource("4_sqnge")
+texture_hover = ExtResource("6_3q5g7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="TextureButton" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.366002
+anchor_top = 0.649098
+anchor_right = 0.527
+anchor_bottom = 0.749869
+offset_right = 336.369
+offset_bottom = 123.344
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.355541, 0.36891)
+texture_normal = ExtResource("5_7yrxm")
+texture_hover = ExtResource("8_30aup")
+metadata/_edit_use_anchors_ = true

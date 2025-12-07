@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxk4r0ideqgx8"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_lbii6"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbii6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.470588, 1)
+
+[node name="Back" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 142.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 38
+text = "Back"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -393.0
+offset_top = 16.0
+offset_right = 387.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "  Project by Vinynx & Lio - Sussex Game Jam 2025
+
+  Deltarune by Toby Fox
+  Official Sprites by Toby Fox & Temmie Chang
+
+  Close-up Art & Menu Assets by Vinynx
+  Bell Asset by Lio
+  Flooring Assets by Mary Jane on itch.io
+  Kitchen Assets by bitglow on itch.io
+  Letter by Casper Gaming on itch.io
+  Fire Spell by pimen on itch.io
+  Text Boxes from https://www.demirramon.com"
