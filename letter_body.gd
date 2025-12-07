@@ -5,9 +5,10 @@ extends StaticBody2D
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_cancel") || Input.is_action_pressed("ui_x"):
 		%TorielLetter.hide()
+		%MysteryLetter.hide()
 		if Global.state == true:
 			get_tree().paused = false
-		if Global.state == false && get_tree().paused == true:
+		if Global.state == false && get_tree().paused && Global.reset == false:
 			get_tree().paused = false
 			%FireMagic.play("fire")
 			%Noelle.animated_sprite.play("shock")
@@ -23,9 +24,14 @@ func _ready() -> void:
 		$Letter.play("opened")
 
 func _on_interact():
-	if Global.state == false:
-		$Letter.play("open")
-	%TorielLetter.show()
+	if Global.reset:
+		if Global.state == false:
+			$Letter.play("open")
+		%MysteryLetter.show()
+	else:
+		if Global.state == false:
+			$Letter.play("open")
+		%TorielLetter.show()
 	get_tree().paused = true
 
 

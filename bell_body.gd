@@ -10,3 +10,4 @@ func _on_interact():
 	if Global.success:
 		print("ding!")
 		Global.bell = true
+		Global.reset = true

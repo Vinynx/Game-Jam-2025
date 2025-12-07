@@ -9,3 +9,4 @@ var letter = false
 var burgers = false
 var success = false
 var bell = false
+var reset = false

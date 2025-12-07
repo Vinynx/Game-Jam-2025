@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://b28wj8o4s32tg"]
+[gd_scene load_steps=90 format=3 uid="uid://b28wj8o4s32tg"]
 
 [ext_resource type="Texture2D" uid="uid://ciyk57rj7kwac" path="res://assets/pixelinterior_LRK/floorswalls_LRK.png" id="1_0vamq"]
 [ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://70bo7lulldhq" path="res://assets/fire magic/fire013.png" id="29_t1s3l"]
 [ext_resource type="Texture2D" uid="uid://b1tt1fgdd2jfw" path="res://assets/fire magic/fire014.png" id="30_br1tb"]
 [ext_resource type="Texture2D" uid="uid://y4tpo6x64evi" path="res://assets/fire magic/fire015.png" id="31_8v45e"]
+[ext_resource type="Texture2D" uid="uid://cdaa4ftfmxtd4" path="res://assets/letter chicken.png" id="37_hwo5g"]
 [ext_resource type="Texture2D" uid="uid://b4avpj87ery7x" path="res://assets/talking/main_talk_01.png" id="37_rs4ar"]
 [ext_resource type="Script" path="res://dialogue.gd" id="38_bl3mp"]
 
@@ -599,6 +600,12 @@ visible = false
 position = Vector2(572, 445)
 scale = Vector2(0.31325, 0.296661)
 texture = ExtResource("15_h3v8s")
+
+[node name="MysteryLetter" type="Sprite2D" parent="StaticBody2D"]
+unique_name_in_owner = true
+position = Vector2(572, 445)
+scale = Vector2(0.31325, 0.296661)
+texture = ExtResource("37_hwo5g")
 
 [node name="FireMagic" type="AnimatedSprite2D" parent="StaticBody2D"]
 unique_name_in_owner = true
