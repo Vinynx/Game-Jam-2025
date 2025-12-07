@@ -41,3 +41,13 @@ offset_right = 1003.0
 offset_bottom = 643.0
 texture = ExtResource("2_28ftp")
 stretch_mode = 4
+
+[node name="Talk3" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 155.0
+offset_top = 405.0
+offset_right = 1003.0
+offset_bottom = 643.0
+texture = ExtResource("2_28ftp")
+stretch_mode = 4
