@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://b28wj8o4s32tg"]
+[gd_scene load_steps=93 format=3 uid="uid://b28wj8o4s32tg"]
 
 [ext_resource type="Texture2D" uid="uid://ciyk57rj7kwac" path="res://assets/pixelinterior_LRK/floorswalls_LRK.png" id="1_0vamq"]
 [ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxhxd17bvf0il" path="res://interactable.tscn" id="5_yeu3c"]
 [ext_resource type="PackedScene" uid="uid://b0f6nv70o5nvw" path="res://interacting_component.tscn" id="6_h115d"]
 [ext_resource type="Script" path="res://oven_body.gd" id="6_j01mq"]
+[ext_resource type="Texture2D" uid="uid://by8phsg0vfqvb" path="res://assets/berdly.png" id="6_urb8a"]
 [ext_resource type="Texture2D" uid="uid://bsepe3wptqfp5" path="res://assets/Bell_and_paper.png" id="7_uixlb"]
 [ext_resource type="Script" path="res://bell_body.gd" id="8_vxpfp"]
 [ext_resource type="Texture2D" uid="uid://6ff0oqvhlnao" path="res://assets/Cyan1.png" id="10_ygc81"]
@@ -117,6 +118,14 @@ texture_region_size = Vector2i(24, 22)
 
 [sub_resource type="TileSet" id="TileSet_r7c8n"]
 sources/0 = SubResource("TileSetAtlasSource_thn4a")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1e3o"]
+texture = ExtResource("6_urb8a")
+texture_region_size = Vector2i(192, 320)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h2xp2"]
+sources/0 = SubResource("TileSetAtlasSource_n1e3o")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4h0x1"]
 texture = ExtResource("3_rdxmd")
@@ -484,6 +493,14 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_r7c8n")
 format = 2
 layer_0/tile_data = PackedInt32Array(393239, 0, 1, 458775, 0, 1, 524311, 0, 1, 589847, 0, 1, 655383, 0, 1, 720919, 0, 1, 786455, 0, 2, 327703, 0, 0)
+
+[node name="Berdly" type="TileMap" parent="."]
+scale = Vector2(0.55, 0.55)
+tile_set = SubResource("TileSet_h2xp2")
+format = 2
+layer_0/tile_data = PackedInt32Array(2097158, 0, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="TileMapIslands2" type="TileMap" parent="."]
 scale = Vector2(3, 3)
