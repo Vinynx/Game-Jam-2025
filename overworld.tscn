@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b28wj8o4s32tg"]
+[gd_scene load_steps=62 format=3 uid="uid://b28wj8o4s32tg"]
 
 [ext_resource type="Texture2D" uid="uid://ciyk57rj7kwac" path="res://assets/pixelinterior_LRK/floorswalls_LRK.png" id="1_0vamq"]
 [ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
@@ -9,6 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://cxhxd17bvf0il" path="res://interactable.tscn" id="5_yeu3c"]
 [ext_resource type="PackedScene" uid="uid://b0f6nv70o5nvw" path="res://interacting_component.tscn" id="6_h115d"]
 [ext_resource type="Script" path="res://oven_body.gd" id="6_j01mq"]
+[ext_resource type="Texture2D" uid="uid://6ff0oqvhlnao" path="res://assets/Cyan1.png" id="10_ygc81"]
+[ext_resource type="Script" path="res://letter_body.gd" id="11_eqwpv"]
+[ext_resource type="Texture2D" uid="uid://fxbm7awg52be" path="res://assets/Cyan2.png" id="11_vb7jt"]
+[ext_resource type="Texture2D" uid="uid://c7lwox2e2i3wb" path="res://assets/Cyan3.png" id="12_mslsx"]
+[ext_resource type="Texture2D" uid="uid://6kaxrkoay8k6" path="res://assets/Cyan4.png" id="13_is2a5"]
+[ext_resource type="Texture2D" uid="uid://cp8n8wbx1q24m" path="res://assets/toriel_letter.png" id="15_h3v8s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neeaf"]
 texture = ExtResource("1_0vamq")
@@ -109,6 +115,37 @@ texture_region_size = Vector2i(33, 47)
 
 [sub_resource type="TileSet" id="TileSet_ysrvm"]
 sources/1 = SubResource("TileSetAtlasSource_2i1gk")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_do8ue"]
+size = Vector2(72, 75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2qip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ygc81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vb7jt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mslsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_is2a5")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_is2a5")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j6h4h"]
 atlas = ExtResource("2_n8f8d")
@@ -363,6 +400,22 @@ tile_set = SubResource("TileSet_ysrvm")
 format = 2
 layer_0/tile_data = PackedInt32Array(327687, 131073, 0)
 
+[node name="LetterBody" type="StaticBody2D" parent="."]
+script = ExtResource("11_eqwpv")
+
+[node name="Interactable" parent="LetterBody" instance=ExtResource("5_yeu3c")]
+interact_name = "Z or Enter to read"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LetterBody/Interactable"]
+position = Vector2(1128, 537.5)
+shape = SubResource("RectangleShape2D_do8ue")
+
+[node name="Letter" type="AnimatedSprite2D" parent="LetterBody"]
+position = Vector2(1127, 536)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_w2qip")
+animation = &"open"
+
 [node name="Noelle" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(100, 533)
@@ -379,6 +432,13 @@ position = Vector2(0, 34.25)
 shape = SubResource("RectangleShape2D_0q1ji")
 
 [node name="InteractingComponent" parent="Noelle" instance=ExtResource("6_h115d")]
+
+[node name="TorielLetter" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(572, 445)
+scale = Vector2(0.31325, 0.296661)
+texture = ExtResource("15_h3v8s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
