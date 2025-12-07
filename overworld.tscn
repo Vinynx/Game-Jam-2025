@@ -717,14 +717,32 @@ visible = false
 offset_left = 932.0
 offset_top = -39.0
 offset_right = 1153.0
-offset_bottom = 200.0
+offset_bottom = 243.0
 theme_override_font_sizes/font_size = 24
 text = "   
      TO DO:
      C̶h̶e̶c̶k̶ ̶L̶e̶t̶t̶e̶r̶
      G̶r̶a̶b̶ ̶B̶u̶r̶g̶e̶r̶s̶
      C̶o̶o̶k̶ ̶B̶u̶r̶g̶e̶r̶s̶
-     R̶i̶n̶g̶ ̶B̶e̶l̶l̶"
+     R̶i̶n̶g̶ ̶B̶e̶l̶l̶
+     New letter?"
+
+[node name="TextList6" type="TextEdit" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 932.0
+offset_top = -39.0
+offset_right = 1153.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 24
+text = "   
+     TO DO:
+     C̶h̶e̶c̶k̶ ̶L̶e̶t̶t̶e̶r̶
+     G̶r̶a̶b̶ ̶B̶u̶r̶g̶e̶r̶s̶
+     C̶o̶o̶k̶ ̶B̶u̶r̶g̶e̶r̶s̶
+     R̶i̶n̶g̶ ̶B̶e̶l̶l̶
+     N̶e̶w̶ ̶l̶e̶t̶t̶e̶r̶?̶
+     Check freezer..."
 
 [connection signal="animation_finished" from="FireMagic2" to="OvenBody" method="_on_fire_magic_2_animation_finished"]
 [connection signal="animation_finished" from="Noelle/AnimatedSprite2D" to="LetterBody" method="_on_animation_finished"]

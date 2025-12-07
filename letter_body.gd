@@ -29,6 +29,8 @@ func _on_interact():
 	if Global.reset:
 		if Global.state == false:
 			$Letter.play("open")
+			%TextList5.hide()
+			%TextList6.show()
 		%MysteryLetter.show()
 	else:
 		if Global.state == false:
