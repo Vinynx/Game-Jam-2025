@@ -26,3 +26,5 @@ func _physics_process(delta: float) -> void:
 	elif Global.letter:
 		%TextList1.hide()
 		%TextList2.show()
+	if Global.success:
+		%Berdly.hide()

@@ -498,6 +498,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(393239, 0, 1, 458775, 0, 1, 524311, 0, 1, 589847, 0, 1, 655383, 0, 1, 720919, 0, 1, 786455, 0, 2, 327703, 0, 0)
 
 [node name="Berdly" type="TileMap" parent="."]
+unique_name_in_owner = true
 scale = Vector2(0.55, 0.55)
 tile_set = SubResource("TileSet_h2xp2")
 format = 2
