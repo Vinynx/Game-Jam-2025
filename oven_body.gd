@@ -6,8 +6,9 @@ extends StaticBody2D
 func _ready() -> void:
 	interactable.interact = _on_interact
 	if Global.last_world_position != Vector2(0, 0):
-		%Noelle.position = Global.last_world_position + Vector2(0, 5)
+		%Noelle.position = Global.last_world_position
 
 func _on_interact():
 	Global.last_world_position = %Noelle.position
+	Global.check = true
 	get_tree().change_scene_to_file('res://stove.tscn')
