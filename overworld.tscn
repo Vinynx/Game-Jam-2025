@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b28wj8o4s32tg"]
+[gd_scene load_steps=87 format=3 uid="uid://b28wj8o4s32tg"]
 
 [ext_resource type="Texture2D" uid="uid://ciyk57rj7kwac" path="res://assets/pixelinterior_LRK/floorswalls_LRK.png" id="1_0vamq"]
 [ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
@@ -9,12 +9,33 @@
 [ext_resource type="PackedScene" uid="uid://cxhxd17bvf0il" path="res://interactable.tscn" id="5_yeu3c"]
 [ext_resource type="PackedScene" uid="uid://b0f6nv70o5nvw" path="res://interacting_component.tscn" id="6_h115d"]
 [ext_resource type="Script" path="res://oven_body.gd" id="6_j01mq"]
+[ext_resource type="Texture2D" uid="uid://bsepe3wptqfp5" path="res://assets/Bell_and_paper.png" id="7_uixlb"]
+[ext_resource type="Script" path="res://bell_body.gd" id="8_vxpfp"]
 [ext_resource type="Texture2D" uid="uid://6ff0oqvhlnao" path="res://assets/Cyan1.png" id="10_ygc81"]
 [ext_resource type="Script" path="res://letter_body.gd" id="11_eqwpv"]
 [ext_resource type="Texture2D" uid="uid://fxbm7awg52be" path="res://assets/Cyan2.png" id="11_vb7jt"]
 [ext_resource type="Texture2D" uid="uid://c7lwox2e2i3wb" path="res://assets/Cyan3.png" id="12_mslsx"]
 [ext_resource type="Texture2D" uid="uid://6kaxrkoay8k6" path="res://assets/Cyan4.png" id="13_is2a5"]
+[ext_resource type="Texture2D" uid="uid://c52alfoc3mcie" path="res://assets/shock/shock006.png" id="14_oi1pe"]
+[ext_resource type="Texture2D" uid="uid://cmu7xr27bhg8p" path="res://assets/shock/shock007.png" id="15_0d8y2"]
 [ext_resource type="Texture2D" uid="uid://cp8n8wbx1q24m" path="res://assets/toriel_letter.png" id="15_h3v8s"]
+[ext_resource type="Texture2D" uid="uid://bti8aamsnxcgv" path="res://assets/shock/shock008.png" id="16_uo5kb"]
+[ext_resource type="Texture2D" uid="uid://c0oalxsy1avvx" path="res://assets/fire magic/fire000.png" id="16_xpsux"]
+[ext_resource type="Texture2D" uid="uid://bwtifd4vsb84k" path="res://assets/fire magic/fire001.png" id="17_inelw"]
+[ext_resource type="Texture2D" uid="uid://32mbaqx3s05e" path="res://assets/fire magic/fire002.png" id="18_0on2x"]
+[ext_resource type="Texture2D" uid="uid://bhjk12w3hasd5" path="res://assets/fire magic/fire003.png" id="19_oc6so"]
+[ext_resource type="Texture2D" uid="uid://bq4piuvj88rag" path="res://assets/fire magic/fire004.png" id="20_ffyba"]
+[ext_resource type="Texture2D" uid="uid://ch4ks8fjv2ynr" path="res://assets/fire magic/fire005.png" id="21_w26qp"]
+[ext_resource type="Texture2D" uid="uid://b34wplgeicr5" path="res://assets/fire magic/fire006.png" id="22_dvikx"]
+[ext_resource type="Texture2D" uid="uid://cfollvugsfwhe" path="res://assets/fire magic/fire007.png" id="23_b1anf"]
+[ext_resource type="Texture2D" uid="uid://cbf86vk65ux0d" path="res://assets/fire magic/fire008.png" id="24_g68p0"]
+[ext_resource type="Texture2D" uid="uid://d08h4st5qrrxh" path="res://assets/fire magic/fire009.png" id="25_8acob"]
+[ext_resource type="Texture2D" uid="uid://c4dvfjqxdafux" path="res://assets/fire magic/fire010.png" id="26_oulle"]
+[ext_resource type="Texture2D" uid="uid://uhkoryn2bak3" path="res://assets/fire magic/fire011.png" id="27_aj0pr"]
+[ext_resource type="Texture2D" uid="uid://cxwa1sqjx54jb" path="res://assets/fire magic/fire012.png" id="28_ib7dp"]
+[ext_resource type="Texture2D" uid="uid://70bo7lulldhq" path="res://assets/fire magic/fire013.png" id="29_t1s3l"]
+[ext_resource type="Texture2D" uid="uid://b1tt1fgdd2jfw" path="res://assets/fire magic/fire014.png" id="30_br1tb"]
+[ext_resource type="Texture2D" uid="uid://y4tpo6x64evi" path="res://assets/fire magic/fire015.png" id="31_8v45e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neeaf"]
 texture = ExtResource("1_0vamq")
@@ -116,8 +137,20 @@ texture_region_size = Vector2i(33, 47)
 [sub_resource type="TileSet" id="TileSet_ysrvm"]
 sources/1 = SubResource("TileSetAtlasSource_2i1gk")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4b06"]
+texture = ExtResource("7_uixlb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ocy4u"]
+sources/0 = SubResource("TileSetAtlasSource_g4b06")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mn6ub"]
+size = Vector2(6.3, 3.9)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_do8ue"]
-size = Vector2(72, 75)
+size = Vector2(125, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w2qip"]
 animations = [{
@@ -300,10 +333,80 @@ animations = [{
 "loop": true,
 "name": &"right_walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_oi1pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0d8y2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uo5kb")
+}],
+"loop": false,
+"name": &"shock",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0q1ji"]
 size = Vector2(27, 20.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjbqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xpsux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_inelw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0on2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_oc6so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ffyba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_w26qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dvikx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_b1anf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_g68p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8acob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_oulle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_aj0pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ib7dp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_t1s3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_br1tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8v45e")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j3hm"]
 size = Vector2(1152, 80)
@@ -353,7 +456,7 @@ layer_0/tile_data = PackedInt32Array(327693, 393216, 2)
 script = ExtResource("4_qgvk6")
 
 [node name="Interactable" parent="FridgeBody" instance=ExtResource("5_yeu3c")]
-interact_name = "Z or Enter to open freezer"
+interact_name = "(open freezer)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FridgeBody/Interactable"]
 position = Vector2(650.5, 271.5)
@@ -387,7 +490,7 @@ layer_0/tile_data = PackedInt32Array(393234, 393216, 1)
 script = ExtResource("6_j01mq")
 
 [node name="Interactable" parent="OvenBody" instance=ExtResource("5_yeu3c")]
-interact_name = "Z or Enter to cook"
+interact_name = "(cook burgers)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OvenBody/Interactable"]
 position = Vector2(888.5, 308)
@@ -400,14 +503,33 @@ tile_set = SubResource("TileSet_ysrvm")
 format = 2
 layer_0/tile_data = PackedInt32Array(327687, 131073, 0)
 
+[node name="TileMapBell" type="TileMap" parent="."]
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_ocy4u")
+format = 2
+layer_0/tile_data = PackedInt32Array(524311, 0, 0)
+
+[node name="BellBody" type="StaticBody2D" parent="."]
+position = Vector2(1127, 536)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("8_vxpfp")
+
+[node name="Interactable" parent="BellBody" instance=ExtResource("5_yeu3c")]
+interact_name = "(ring bell)"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BellBody/Interactable"]
+position = Vector2(-31.25, -156.25)
+scale = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_mn6ub")
+
 [node name="LetterBody" type="StaticBody2D" parent="."]
 script = ExtResource("11_eqwpv")
 
 [node name="Interactable" parent="LetterBody" instance=ExtResource("5_yeu3c")]
-interact_name = "Z or Enter to read"
+interact_name = "(read letter)"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LetterBody/Interactable"]
-position = Vector2(1128, 537.5)
+position = Vector2(1101.5, 537.5)
 shape = SubResource("RectangleShape2D_do8ue")
 
 [node name="Letter" type="AnimatedSprite2D" parent="LetterBody"]
@@ -440,6 +562,15 @@ position = Vector2(572, 445)
 scale = Vector2(0.31325, 0.296661)
 texture = ExtResource("15_h3v8s")
 
+[node name="FireMagic" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1056, 471)
+scale = Vector2(7.18164, 6.94727)
+sprite_frames = SubResource("SpriteFrames_bjbqf")
+animation = &"fire"
+frame = 15
+frame_progress = 1.0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="NorthBorder" type="CollisionShape2D" parent="StaticBody2D"]
@@ -466,3 +597,5 @@ shape = SubResource("RectangleShape2D_ensp0")
 [node name="IslandBox" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(648, 504)
 shape = SubResource("RectangleShape2D_5gk8y")
+
+[connection signal="animation_finished" from="Noelle/AnimatedSprite2D" to="LetterBody" method="_on_animation_finished"]

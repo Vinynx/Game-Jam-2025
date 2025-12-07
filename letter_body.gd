@@ -1,12 +1,16 @@
 extends StaticBody2D
 
 @onready var interactable: Area2D = $Interactable
-@onready var animated_sprite = $AnimatedSprite2D
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_cancel") || Input.is_action_pressed("ui_x"):
 		get_tree().paused = false
 		%TorielLetter.hide()
+		if Global.state == false:
+			%FireMagic.play("fire")
+			%Noelle.animated_sprite.play("shock")
+			%Noelle.position += Vector2(-120, 0)
+			Global.state = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +22,9 @@ func _ready() -> void:
 func _on_interact():
 	if Global.state == false:
 		$Letter.play("open")
-		Global.state = true
 	%TorielLetter.show()
 	get_tree().paused = true
+
+
+func _on_animation_finished() -> void:
+	%Noelle.animated_sprite.play("right_idle")
