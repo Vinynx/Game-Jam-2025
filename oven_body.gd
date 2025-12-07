@@ -5,6 +5,9 @@ extends StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interactable.interact = _on_interact
+	if Global.last_world_position != Vector2(0, 0):
+		%Noelle.position = Global.last_world_position + Vector2(0, 5)
 
 func _on_interact():
+	Global.last_world_position = %Noelle.position
 	get_tree().change_scene_to_file('res://stove.tscn')
