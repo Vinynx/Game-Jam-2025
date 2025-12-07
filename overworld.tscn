@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://b28wj8o4s32tg"]
+[gd_scene load_steps=94 format=3 uid="uid://b28wj8o4s32tg"]
 
 [ext_resource type="Texture2D" uid="uid://ciyk57rj7kwac" path="res://assets/pixelinterior_LRK/floorswalls_LRK.png" id="1_0vamq"]
 [ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
@@ -126,6 +126,9 @@ texture_region_size = Vector2i(192, 320)
 
 [sub_resource type="TileSet" id="TileSet_h2xp2"]
 sources/0 = SubResource("TileSetAtlasSource_n1e3o")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwadj"]
+size = Vector2(109, 182)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4h0x1"]
 texture = ExtResource("3_rdxmd")
@@ -500,7 +503,11 @@ tile_set = SubResource("TileSet_h2xp2")
 format = 2
 layer_0/tile_data = PackedInt32Array(2097158, 0, 0)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="BerdlyBody" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BerdlyBody"]
+position = Vector2(57.5, 286)
+shape = SubResource("RectangleShape2D_mwadj")
 
 [node name="TileMapIslands2" type="TileMap" parent="."]
 scale = Vector2(3, 3)
