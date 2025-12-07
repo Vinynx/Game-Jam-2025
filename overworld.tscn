@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://b28wj8o4s32tg"]
+[gd_scene load_steps=89 format=3 uid="uid://b28wj8o4s32tg"]
 
 [ext_resource type="Texture2D" uid="uid://ciyk57rj7kwac" path="res://assets/pixelinterior_LRK/floorswalls_LRK.png" id="1_0vamq"]
 [ext_resource type="Script" path="res://noelle.gd" id="1_shmvu"]
@@ -36,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://70bo7lulldhq" path="res://assets/fire magic/fire013.png" id="29_t1s3l"]
 [ext_resource type="Texture2D" uid="uid://b1tt1fgdd2jfw" path="res://assets/fire magic/fire014.png" id="30_br1tb"]
 [ext_resource type="Texture2D" uid="uid://y4tpo6x64evi" path="res://assets/fire magic/fire015.png" id="31_8v45e"]
+[ext_resource type="Texture2D" uid="uid://b4avpj87ery7x" path="res://assets/talking/main_talk_01.png" id="37_rs4ar"]
+[ext_resource type="Script" path="res://dialogue.gd" id="38_bl3mp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_neeaf"]
 texture = ExtResource("1_0vamq")
@@ -607,5 +609,21 @@ theme_override_font_sizes/font_size = 24
 text = "   
      Z or Enter to interact
      X or Esc to exit menu"
+
+[node name="MainTalk1" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_left = 155.0
+offset_top = 405.0
+offset_right = 1003.0
+offset_bottom = 643.0
+texture = ExtResource("37_rs4ar")
+stretch_mode = 4
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("38_bl3mp")
 
 [connection signal="animation_finished" from="Noelle/AnimatedSprite2D" to="LetterBody" method="_on_animation_finished"]
