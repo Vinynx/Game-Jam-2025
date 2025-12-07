@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _on_interact():
 	Global.last_world_position = %Noelle.position
-	if Global.state:
+	if Global.state && Global.burgers:
 		Global.check = true
 		%FireMagic2.play("fire")
 

@@ -1,6 +1,8 @@
 extends Control
 
 func _ready():
+	if Global.burgers == true:
+		%Burgers.hide()
 	%Burgers.pressed.connect(burgers)
 
 func _input(event: InputEvent) -> void:
@@ -9,3 +11,4 @@ func _input(event: InputEvent) -> void:
 
 func burgers():
 	%Burgers.hide()
+	Global.burgers = true

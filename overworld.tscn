@@ -609,7 +609,7 @@ animation = &"fire"
 frame = 15
 frame_progress = 1.0
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="ControlsText" type="TextEdit" parent="."]
 offset_left = -17.0
 offset_top = -30.0
 offset_right = 293.0
@@ -634,6 +634,80 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("38_bl3mp")
+
+[node name="TextList1" type="TextEdit" parent="."]
+unique_name_in_owner = true
+offset_left = 932.0
+offset_top = -39.0
+offset_right = 1153.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 24
+text = "   
+     TO DO:
+     Check Letter
+     Grab Burgers
+     Cook Burgers
+     Ring Bell"
+
+[node name="TextList2" type="TextEdit" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 932.0
+offset_top = -39.0
+offset_right = 1153.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 24
+text = "   
+     TO DO:
+     C̶h̶e̶c̶k̶ ̶L̶e̶t̶t̶e̶r̶
+     Grab Burgers
+     Cook Burgers
+     Ring Bell"
+
+[node name="TextList3" type="TextEdit" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 932.0
+offset_top = -39.0
+offset_right = 1153.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 24
+text = "   
+     TO DO:
+     C̶h̶e̶c̶k̶ ̶L̶e̶t̶t̶e̶r̶
+     G̶r̶a̶b̶ ̶B̶u̶r̶g̶e̶r̶s̶
+     Cook Burgers
+     Ring Bell"
+
+[node name="TextList4" type="TextEdit" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 932.0
+offset_top = -39.0
+offset_right = 1153.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 24
+text = "   
+     TO DO:
+     C̶h̶e̶c̶k̶ ̶L̶e̶t̶t̶e̶r̶
+     G̶r̶a̶b̶ ̶B̶u̶r̶g̶e̶r̶s̶
+     C̶o̶o̶k̶ ̶B̶u̶r̶g̶e̶r̶s̶
+     Ring Bell"
+
+[node name="TextList5" type="TextEdit" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 932.0
+offset_top = -39.0
+offset_right = 1153.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 24
+text = "   
+     TO DO:
+     C̶h̶e̶c̶k̶ ̶L̶e̶t̶t̶e̶r̶
+     G̶r̶a̶b̶ ̶B̶u̶r̶g̶e̶r̶s̶
+     C̶o̶o̶k̶ ̶B̶u̶r̶g̶e̶r̶s̶
+     R̶i̶n̶g̶ ̶B̶e̶l̶l̶"
 
 [connection signal="animation_finished" from="FireMagic2" to="OvenBody" method="_on_fire_magic_2_animation_finished"]
 [connection signal="animation_finished" from="Noelle/AnimatedSprite2D" to="LetterBody" method="_on_animation_finished"]

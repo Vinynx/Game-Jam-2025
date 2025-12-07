@@ -5,12 +5,15 @@ extends StaticBody2D
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_cancel") || Input.is_action_pressed("ui_x"):
 		%TorielLetter.hide()
+		if Global.state == true:
+			get_tree().paused = false
 		if Global.state == false && get_tree().paused == true:
 			get_tree().paused = false
 			%FireMagic.play("fire")
 			%Noelle.animated_sprite.play("shock")
 			%Noelle.position += Vector2(-120, 0)
 			Global.state = true
+			Global.letter = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

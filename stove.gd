@@ -64,3 +64,4 @@ func _on_timer_timeout():
 		timer.stop()
 		print("success")
 		%Success.show()
+		Global.success = true
