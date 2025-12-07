@@ -58,9 +58,8 @@ func _on_timer_timeout():
 		%Cooked2.show()
 	
 	if count/2 > score:
-		#timer.stop()
-		#print("fail")
-		pass
+		timer.stop()
+		print("fail")
 	if count == 12:
 		timer.stop()
 		print("success")
